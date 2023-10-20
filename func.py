@@ -1,4 +1,5 @@
 from ultralytics import YOLO
+import cv2
 def infer(video,model=YOLO('yolov5nu.pt')):
     
     while True:
