@@ -7,3 +7,5 @@ runs
 # ignore run.py
 run.py
 run.ipynb
+# python cache?
+__pycache__

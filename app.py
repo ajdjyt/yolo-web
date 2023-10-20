@@ -1,5 +1,5 @@
 from ultralytics import YOLO
-model=YOLO('yolov5n.pt')
+model=YOLO('yolov5nu.pt')
 
 import cv2
 video = cv2.VideoCapture(0)

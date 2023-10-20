@@ -37,3 +37,5 @@ docker build -t detect:1 .
 delete torch import and listing of cuda devices
 consider switching base to https://hub.docker.com/r/ultralytics/ultralytics
 create template docker-compose.yaml
+change model from n to nu in app.py
+add copy of func.py in Dockerfile
