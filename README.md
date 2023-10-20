@@ -18,7 +18,13 @@ python app.py
 ```
 
 ## Docker
-The project comes with Dockerfiles and docker-compose files, when working in docker the camera device has to be provided using --device
+The project comes with Dockerfiles and docker-compose files, when working in docker the camera device has to be provided using --device,
 ```
 docker run -p 8080:8080 --device /dev/video0 ghcr.io/ajdjyt/yolo-web
+```
+
+### GPUs
+If you have a GPU you can use it by adding the following 
+```
+docker run -p 8080:8080 --device /dev/video0 --gpus all ghcr.io/ajdjyt/yolo-web
 ```

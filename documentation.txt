@@ -39,3 +39,5 @@ consider switching base to https://hub.docker.com/r/ultralytics/ultralytics
 create template docker-compose.yaml
 change model from n to nu in app.py
 add copy of func.py in Dockerfile
+use --device /dev/video0 to add cam access
+add gpu docker readme
