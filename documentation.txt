@@ -19,3 +19,6 @@ from ultralytics import YOLO
 model=YOLO('yolov5n.pt')
 res=model(source="0",show=True)
 ```
+build app 
+ignore run*
+git commit -am "implemented flask bones"

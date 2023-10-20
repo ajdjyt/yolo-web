@@ -4,3 +4,5 @@
 *.pt
 # runs
 runs
+# ignore run.py
+run*
