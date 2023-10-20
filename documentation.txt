@@ -22,3 +22,9 @@ res=model(source="0",show=True)
 build app 
 ignore run*
 git commit -am "implemented flask bones"
+edit gitignore to remove run.py,run.ipynb
+git commit -am "remove run.py"
+setup git repo
+git remote add origin https://github.com/ajdjyt/yolo-web
+git push -u origin main
+change opencv-python to opencv-python-headless
