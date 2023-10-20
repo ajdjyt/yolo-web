@@ -1,0 +1,6 @@
+# vscode
+.vscode
+# downloaded model files
+*.pt
+# runs
+runs
