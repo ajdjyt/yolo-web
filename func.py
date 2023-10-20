@@ -1,4 +1,4 @@
-import ultralytics
+from ultralytics import YOLO
 def infer(video,model=YOLO('yolov5nu.pt')):
     
     while True:
