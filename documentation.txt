@@ -28,3 +28,7 @@ setup git repo
 git remote add origin https://github.com/ajdjyt/yolo-web
 git push -u origin main
 change opencv-python to opencv-python-headless
+touch Dockerfile docker-compose.yaml
+using python:3.10 as base
+change port to 8080
+build base Dockerfile
