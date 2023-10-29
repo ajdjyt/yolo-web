@@ -1,23 +1,26 @@
-from ultralytics import YOLO
-model=YOLO('yolov5nu.pt')
-
-import cv2
-video = cv2.VideoCapture(0)
-
-from flask import Flask,Response
+from flask import Flask
+from flask_restful import Api, Resource, reqparse
 from func import infer
+import cv2
+from ultralytics import YOLO
+from flask import Flask,Response
 
 app = Flask(__name__)
+api = Api(app)
 
-@app.route("/")
-def hello_world():
-    return "<p>Object detection with yolo, please head to /video_feed</p>"
+model = YOLO('yolov5nu.pt')
+video = cv2.VideoCapture(0)
 
-@app.route('/video_feed')
-def video_feed():
-    global video
-    return Response(infer(video),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
-    
+class HelloWorld(Resource):
+    def get(self):
+        return {'message': 'Object detection with YOLO'}
+
+class VideoFeed(Resource):
+    def get(self):
+        return Response(infer(video), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+api.add_resource(HelloWorld, '/')
+api.add_resource(VideoFeed, '/video_feed')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, threaded=True)
