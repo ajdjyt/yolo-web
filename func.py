@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import cv2
-def infer(video,model=YOLO('yolov5nu.pt')):
-    
+def infer(source,model=YOLO('yolov5nu.pt')):
+    video = cv2.VideoCapture(source)
     while True:
         success, frame = video.read()
         if success:

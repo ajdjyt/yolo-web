@@ -5,11 +5,13 @@ import cv2
 from ultralytics import YOLO
 from flask import Flask,Response
 
+source=0
+
 app = Flask(__name__)
 api = Api(app)
 
 model = YOLO('yolov5nu.pt')
-video = cv2.VideoCapture(0)
+
 
 class HelloWorld(Resource):
     def get(self):
@@ -17,7 +19,7 @@ class HelloWorld(Resource):
 
 class VideoFeed(Resource):
     def get(self):
-        return Response(infer(video), mimetype='multipart/x-mixed-replace; boundary=frame')
+        return Response(infer(source), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 api.add_resource(HelloWorld, '/')
 api.add_resource(VideoFeed, '/video_feed')
